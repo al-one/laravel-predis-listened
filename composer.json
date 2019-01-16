@@ -8,12 +8,6 @@
             "email": "hi@anlo.ng"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/al-one/laravel-redis-extendable.git"
-        }
-    ],
     "require": {
         "php": ">=5.6.4",
         "al-one/laravel-redis-extendable": "~1.5",
