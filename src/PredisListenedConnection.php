@@ -3,7 +3,6 @@
 namespace Alone\LaravelPredisListened;
 
 use Illuminate\Redis\Connections;
-use Illuminate\Support\Facades\Event;
 
 class PredisListenedConnection extends Connections\PredisConnection
 {
@@ -20,7 +19,7 @@ class PredisListenedConnection extends Connections\PredisConnection
         $stm = microtime(true);
         $ret = parent::command($method,$parameters);
         $tim = round((microtime(true) - $stm) * 1000,4);
-        Event::fire(new RedisEvent($method,$parameters,$tim,$this));
+        event(new RedisEvent($method,$parameters,$tim,$this));
         return $ret;
     }
 
