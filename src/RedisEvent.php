@@ -2,6 +2,8 @@
 
 namespace Alone\LaravelPredisListened;
 
+use Illuminate\Support\Arr;
+
 class RedisEvent
 {
 
@@ -58,7 +60,7 @@ class RedisEvent
             public function executeCommand(\Predis\Command\CommandInterface $command){}
             public function execute($callable = null){}
         };
-        $fun = array_first($arguments);
+        $fun = Arr::first($arguments);
         if(is_callable($fun))
         {
             call_user_func($fun,$pip);
