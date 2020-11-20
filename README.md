@@ -17,14 +17,13 @@ $ composer require "al-one/laravel-predis-listened" -vvv
 ## Usage
 
 ```php
+# optional if >= 5.5
 # config/app.php
 <?php
 
 return [
 
     'providers' => [
-        // Illuminate\Redis\RedisServiceProvider::class,
-        Alone\LaravelRedisExtendable\RedisServiceProvider::class,
         Alone\LaravelPredisListened\ServiceProvider::class,
     ],
 
